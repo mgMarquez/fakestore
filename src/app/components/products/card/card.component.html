@@ -1,0 +1,21 @@
+<div class="card w-100 h-100 shadow" style="width: 18rem">
+  <a [routerLink]="['products', product.id]">
+    <img
+      [src]="product.image"
+      class="card-img-top object-fit-scale"
+      [alt]="product.title"
+    />
+  </a>
+  <div class="card-body">
+    <a [routerLink]="['products', product.id]">
+      <h5 class="card-title">{{ product.title | slice : 0 : 30 }} ...</h5>
+    </a>
+    <p class="card-text">{{ product.description | slice : 0 : 100 }} ...</p>
+    <div class="d-flex justify-content-around">
+      <h3>{{ product.price | currency }}</h3>
+      <button class="btn btn-primary" (click)="onAddToCard()">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
